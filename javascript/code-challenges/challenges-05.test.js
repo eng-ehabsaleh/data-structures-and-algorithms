@@ -150,14 +150,26 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
-  let newArr = [];
-  newArr.push(str.split());
-  newArr.reduce((rev, char) => {
-    return char + rev;
+  const newArr = str.split("");
+  // console.log(str);
+  const secArr = newArr.reduce((acc, lett) => {
+    return lett + acc;
   }, "");
-  newArr = newArr.forEach((x) => {
-    x.concat();
-  });
+  console.log(newArr[0]);
+  return secArr;
+  // let newArr = [];
+  // newArr.push(str.split());
+  // console.log(newArr);
+  // newArr.reduce((rev, char) => {
+  //   return char + rev;
+  // }, "");
+  // newArr = newArr.forEach((x) => {
+  //   x.concat();
+  // });
+  // .reduce((acc, lett) => {
+  //   return acc + lett;
+  // }, "");
+  // return str;
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
