@@ -24,14 +24,10 @@ function lower(str) {
 const updateAnimal = (arr, callback) => {
   // Solution code here...
   const newArr = [];
-  arr.map((ele) => {
-    newArr.push(ele.toLowerCase());
+  arr.forEach((ele) => {
+    newArr.push(callback(ele));
   });
-  const secArr = [];
-  arr.map((ele) => {
-    secArr.push(ele.toUpperCase());
-  });
-  return newArr, secArr;
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
