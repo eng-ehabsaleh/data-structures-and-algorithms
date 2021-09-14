@@ -9,11 +9,8 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 function returnTen(str) {
   // Solution code here...
-  const newArr = str.split("");
-  newArr.splice(0, 1);
-  console.log(newArr);
-  // newArr.join("");
-  return newArr;
+  const result = str.split("").splice(-10);
+  return result;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -140,41 +137,11 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 const salesData = (hours, data) => {
   // Solution code here...
 
-  function Pat(hour, data) {
-    this.hour = hour;
-    this.data = data;
-    Pat.data.push(this);
-  }
-  Pat.data = [];
-
-  // data = [];
-
-  // data.push(
-  //   { sales: ``, time: "9 a.m." },
-  //   { sales: ``, time: "10 a.m." },
-  //   { sales: ``, time: "11 a.m." },
-  //   { sales: ``, time: "12 p.m." },
-  //   { sales: ``, time: "1 p.m." },
-  //   { sales: ``, time: "2 p.m." },
-  //   { sales: ``, time: "3 p.m." },
-  //   { sales: ``, time: "4 p.m." },
-  //   { sales: ``, time: "5 p.m." },
-  //   { sales: ``, time: "6 p.m." },
-  //   { sales: ``, time: "7 p.m." },
-  //   { sales: ``, time: "8 p.m." }
-  // );
-
-  // let num = [];
-  // let numb = 0;
-
-  // for (let i = 0; i < hoursOpen.length; i++) {
-  //   numb = 0;
-  //   cookieStores.forEach((ele) => {
-  //     numb += ele[i];
-  //   });
-  //   data.sales = `${numb} cookies`;
-  // }
-  // return data;
+  const newArr = [];
+  hours.forEach((ele, i) => {
+    newArr.push({ sales: `${data[i]} cookies`, time: ele });
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
