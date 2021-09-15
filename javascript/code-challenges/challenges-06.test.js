@@ -24,7 +24,7 @@ Returns: ['dyoll', 'eimaj'];
 
 const getNames = (arr) => {
   // Solution code here...
-  let secArr = [];
+  const secArr = [];
   arr.forEach((ele) => {
     secArr.push(ele.name.split("").reverse().join(""));
   });
