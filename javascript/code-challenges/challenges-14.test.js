@@ -12,6 +12,13 @@ Write a function named screenForNames that takes in an array of strings and uses
 
 const screenForNames = (arr) => {
   // Solution code here...
+  const r_gex = /^([MD]r|[MD]rs|Ms).\s[A-Z]\w*/g;
+  const newArr = arr.filter((ele) => {
+    if (r_gex.test(ele)) {
+      return ele;
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,14 +112,14 @@ let starWarsData = [
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
-  const newArr = [];
-  arr.forEach((ele) => {
-    if (ele.mass > arr[0].mass) {
-      newArr.push(ele.name);
-    }
-  });
-  console.log(newArr);
-  return newArr;
+  let mass = 0;
+  arr.forEach((character) =>
+    character.name === "Luke Skywalker" ? (mass = parseInt(character.mass)) : 0
+  );
+  return arr
+    .filter((character) => parseInt(character.mass) > mass)
+    .map((result) => result.name)
+    .join(" - ");
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -131,28 +138,15 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
-  if (property === "price") {
-    arr.sort((a, b) => {
-      if (a.price > b.price) {
-        return 1;
-      }
-      if (a.price < b.price) {
-        return -1;
-      } else {
-        return 0;
-      }
-    });
-  } else if (property === "name") {
-    if (a.name > b.name) {
+  arr.sort((a, b) => {
+    if (a[property] > b[property]) {
       return 1;
-    }
-    if (a.name < b.name) {
+    } else if (a[property] < b[property]) {
       return -1;
     } else {
       return 0;
     }
-  }
-
+  });
   return arr;
 };
 
@@ -170,6 +164,7 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
   // Solution code here...
+  return url.includes("https://");
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -193,6 +188,21 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+  if (
+    (board[0][0] === board[1][1] && board[0][0] === board[2][2]) ||
+    (board[0][2] === board[1][1] && board[0][2] === board[2][0])
+  ) {
+    return true;
+  }
+  for (let i = 0; i < 3; i++) {
+    if (
+      (board[0][i] === board[1][i] && board[0][i] === board[2][i]) ||
+      (board[i][0] === board[i][1]) === board[i][2]
+    ) {
+      return true;
+    }
+  }
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
