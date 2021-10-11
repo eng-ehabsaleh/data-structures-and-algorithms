@@ -25,3 +25,6 @@ To run your tests
 **cc1**
 
 <img src="img/cc1.png">
+
+**cc2**
+<img src="python/code_challenges/cc2/cc2.PNG">
