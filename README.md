@@ -22,9 +22,9 @@ To run your tests
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
 
-**cc1**
+**CC1**
 
 <img src="img/cc1.png">
 
-**cc2**
+**CC2**
 <img src="python/code_challenges/cc2/cc2.PNG">
