@@ -1,9 +1,4 @@
-# from linked_list.linked_list import LinkedList
-
-
-# def test_import():
-#     assert LinkedList
-from linked_list.linked_list import Node,  LinkedList
+from linked_list import Node,  LinkedList
 import pytest
 
 
