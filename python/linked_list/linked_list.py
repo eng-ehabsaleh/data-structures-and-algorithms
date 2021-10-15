@@ -48,6 +48,7 @@ class LinkedList:
         self.head = None
 
     def insert(self, value):
+        # print(self.head)
         """"
         Insert creates a Node with the value that was passed and adds
         it to the head of the linked list shifting all other values down
@@ -58,7 +59,25 @@ class LinkedList:
         returns: None
         """
         # create new node
+
         self.head = Node(value, self.head)
+        print(self.head.data)
 
     def includes(self, value):
-        pass
+        if self.head.data == value:
+            return True
+        else:
+            return False
+
+    def to_string(self):
+        return (f"{ Node.data } -> { LinkedList } -> any -> NULL")
+
+
+ehab = LinkedList()
+ehab.insert(2)
+print(ehab.includes(4))
+print(ehab.to_string)
+aseel = LinkedList()
+aseel.insert(10)
+print(aseel.includes(10))
+print(aseel.to_string)
