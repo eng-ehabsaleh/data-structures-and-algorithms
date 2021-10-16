@@ -22,6 +22,17 @@ To run your tests
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
 
+
 **code challenge one**
 
+**CC1**
+
+
 <img src="img/cc1.png">
+
+**CC2**
+<img src="python/code_challenges/cc2/cc2.PNG">
+
+**cc3**
+
+<img src="python/code_challenges/cc3/cc3.PNG">
