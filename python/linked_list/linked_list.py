@@ -1,15 +1,3 @@
-# class LinkedList:
-#     """
-#     Put docstring here
-#     """
-
-#     def __init__(self):
-#         # initialization here
-#         pass
-
-#     def some_method(self):
-#         # method body here
-#         pass
 class Node:
     """
     A class representing a Node
@@ -21,13 +9,13 @@ class Node:
     Methods
     -------
     __init__(data, next_):
-        the constructor method for the class, it takes two parameters, the data parameter is the a reference to the data the node will hold, and the next_ 
+        the constructor method for the class, it takes two parameters, the data parameter is the a reference to the data the node will hold, and the next_
 
     """
 
-    def __init__(self, data, next_=None):
+    def __init__(self, data, nxt=None):
         self.data = data
-        self.next = next_
+        self.nxt = nxt
 
 
 class LinkedList:
@@ -59,25 +47,48 @@ class LinkedList:
         returns: None
         """
         # create new node
-
+        # print("before", self.head)
         self.head = Node(value, self.head)
-        print(self.head.data)
+        # self.ll.append(self.head)
+
+        # print(self.head.nxt)
+        # print("after1", self.head)
+        # print("data", self.head.data)
+        # print("next value", self.head.nxt)
 
     def includes(self, value):
-        if self.head.data == value:
-            return True
-        else:
-            return False
+        """insert function will loop through all the inside the dictionary(object)
+                Arrgument
+                Value:any
+                returns :True/False"""
+        element = self.head
+        while element:
+            if element.data == value:
+                return True
+            elif element.nxt is not None:
+                element = element.nxt
+            else:
+                return False
 
-    def to_string(self):
-        return (f"{ Node.data } -> { LinkedList } -> any -> NULL")
+    # def to_string(self):
+    #     """to_string function will loop trough all the dictionary (object)
+    #             Arrgument :no arrgument
+    #             return all the data inside the dictionary"""
+
+    #     string = ""
+    #     element = self.head
+    #     while element:
+    #         string += "{ "+str(element.data)+" } -> "
+    #         element = element.nxt
+    #     string += "NULL"
+    #     return string
 
 
-ehab = LinkedList()
-ehab.insert(2)
-print(ehab.includes(4))
-print(ehab.to_string)
-aseel = LinkedList()
-aseel.insert(10)
-print(aseel.includes(10))
-print(aseel.to_string)
+# ehab = LinkedList()
+# ehab.insert(2)
+# ehab.insert(1)
+# ehab.insert(6)
+# print(ehab.to_string())
+# print("for two", ehab.includes(2))
+# print("for6", ehab.includes(6))
+# print("for 3", ehab.includes(3))
