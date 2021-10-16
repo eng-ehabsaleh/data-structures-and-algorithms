@@ -70,18 +70,18 @@ class LinkedList:
             else:
                 return False
 
-    # def to_string(self):
-    #     """to_string function will loop trough all the dictionary (object)
-    #             Arrgument :no arrgument
-    #             return all the data inside the dictionary"""
+    def to_string(self):
+        """to_string function will loop trough all the dictionary (object)
+                Arrgument :no arrgument
+                return all the data inside the dictionary"""
 
-    #     string = ""
-    #     element = self.head
-    #     while element:
-    #         string += "{ "+str(element.data)+" } -> "
-    #         element = element.nxt
-    #     string += "NULL"
-    #     return string
+        string = ""
+        element = self.head
+        while element:
+            string += "{ "+str(element.data)+" } -> "
+            element = element.nxt
+        string += "NULL"
+        return string
 
 
 # ehab = LinkedList()

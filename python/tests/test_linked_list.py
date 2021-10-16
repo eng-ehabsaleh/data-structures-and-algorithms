@@ -106,15 +106,15 @@ def test_linked_inclue():
     assert ll.includes(4) == False
 
 
-# def test_linked_to_string():
-#     # Arrange
-#     expected = "{ a } -> { b } -> { c } -> NULL"
-#     ll = LinkedList()
-#     # Act
-#     ll.insert("c")
-#     ll.insert("b")
-#     ll.insert("a")
-#     # Assert
-#     actual = ll.to_string()
-#     # Assert
-#     assert actual == expected
+def test_linked_to_string():
+    # Arrange
+    expected = "{ a } -> { b } -> { c } -> NULL"
+    ll = LinkedList()
+    # Act
+    ll.insert("c")
+    ll.insert("b")
+    ll.insert("a")
+    # Assert
+    actual = ll.to_string()
+    # Assert
+    assert actual == expected
