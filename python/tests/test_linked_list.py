@@ -1,14 +1,12 @@
 # from linked_list.linked_list import LinkedList
 
-
-# def test_import():
-#     assert LinkedList
-from linked_list.linked_list import Node,  LinkedList
+# from linked_list.linked_list import Node, LinkedList
+from code_challenges.cc5.linked_list import Node,  LinkedList
 import pytest
 
 
-def test_version():
-    assert __version__ == '0.1.0'
+# def test_version():
+#     assert __version__ == '0.1.0'
 
 
 def test_node_has_int_data():
