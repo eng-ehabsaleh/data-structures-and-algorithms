@@ -83,6 +83,17 @@ class LinkedList:
         string += "NULL"
         return string
 
+    def append(self, new_value):
+        new_node = Node(new_value)
+        if self.head is None:
+            self.head = new_node
+            return
+
+        last = self.head
+        while (last.nxt):
+            last = last.nxt
+
+        last.nxt = new_node
 
 # ehab = LinkedList()
 # ehab.insert(2)

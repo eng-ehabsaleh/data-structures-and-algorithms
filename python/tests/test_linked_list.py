@@ -1,7 +1,5 @@
-# from linked_list.linked_list import LinkedList
 
-# from linked_list.linked_list import Node, LinkedList
-from code_challenges.cc5.linked_list import Node,  LinkedList
+from code_challenges.cc5_6.linked_list import Node,  LinkedList
 import pytest
 
 
@@ -113,6 +111,20 @@ def test_linked_to_string():
     ll.insert("b")
     ll.insert("a")
     # Assert
+    actual = ll.to_string()
+    # Assert
+    assert actual == expected
+
+
+def test_linked_list_append():
+    # Arrange
+    expected = "{ a } -> { b } -> { c } -> { A } -> NULL"
+    ll = LinkedList()
+    # Act
+    ll.insert("c")
+    ll.insert("b")
+    ll.insert("a")
+    ll.append("A")
     actual = ll.to_string()
     # Assert
     assert actual == expected
