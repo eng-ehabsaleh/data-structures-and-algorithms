@@ -29,8 +29,9 @@ To run your tests
 <img src="python/code_challenges/cc1/final solution for cc1.PNG">
 
 **CC2**
-<img src="python/code_challenges/cc2/cc2.PNG">
 
-**cc3**
+<img src="python/code_challenges/cc2/final cc2.PNG">
+
+**CC3**
 
 <img src="python/code_challenges/cc3/cc3.PNG">
