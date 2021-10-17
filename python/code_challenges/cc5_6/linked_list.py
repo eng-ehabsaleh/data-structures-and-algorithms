@@ -8,8 +8,8 @@ class Node:
 
     Methods
     -------
-    __init__(data, next_):
-        the constructor method for the class, it takes two parameters, the data parameter is the a reference to the data the node will hold, and the next_
+    __init__(data, nxt_):
+        the constructor method for the class, it takes two parameters, the data parameter is the a reference to the data the node will hold, and the nxt_
 
     """
 
@@ -54,7 +54,7 @@ class LinkedList:
         # print(self.head.nxt)
         # print("after1", self.head)
         # print("data", self.head.data)
-        # print("next value", self.head.nxt)
+        # print("nxt value", self.head.nxt)
 
     def includes(self, value):
         """insert function will loop through all the inside the dictionary(object)
@@ -71,7 +71,7 @@ class LinkedList:
                 return False
 
     def to_string(self):
-        """to_string function will loop trough all the dictionary (object) 
+        """to_string function will loop trough all the dictionary (object)
                 Arrgument :no arrgument
                 return all the data inside the dictionary"""
 
@@ -94,11 +94,48 @@ class LinkedList:
             last = last.nxt
 
         last.nxt = new_node
-# ehab = LinkedList()
-# ehab.insert(2)
-# ehab.insert(1)
-# ehab.insert(6)
+
+    def insert_before(self, pre, new):
+        if self.head is None:
+            print("List has no element")
+            return
+        if pre == self.head.nxt:
+            new_node = Node(new)
+            new_node.nxt = self.head
+            self.head = new_node
+            return
+        n = self.head
+        print(n.nxt)
+        while n.nxt is not None:
+            if n.nxt.data == pre:
+                break
+            n = n.nxt
+        if n.nxt is None:
+            print("item not in the list")
+        else:
+            new_node = Node(new)
+
+    def insert_after(self, prev_node, new_data):
+
+        if prev_node is None:
+            print("The given previous node must inLinkedList.")
+            return
+
+        new_node = Node(new_data)
+
+        new_node.nxt = prev_node
+
+        prev_node = new_node
+
+
+ehab = LinkedList()
+ehab.insert(2)
+ehab.insert(1)
+ehab.insert(6)
+print("hi", ehab.insert_after(1, 3))
 # print(ehab.to_string())
+# print("hi", ehab.insert_before(2, 7))
+print(ehab.to_string())
 # print("for two", ehab.includes(2))
 # print("for6", ehab.includes(6))
 # print("for 3", ehab.includes(3))
