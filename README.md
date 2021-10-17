@@ -30,6 +30,8 @@ To run your tests
 
 **CC2**
 
+<img src="python/code_challenges/cc2/final cc2.PNG">
+
 **cc3**
 
 <img src="python/code_challenges/cc3/cc3.PNG">
