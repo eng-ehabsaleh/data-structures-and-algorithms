@@ -29,7 +29,6 @@ To run your tests
 <img src="python/code_challenges/cc1/final solution for cc1.PNG">
 
 **CC2**
-<img src="python/code_challenges/cc2/cc2.PNG">
 
 **cc3**
 
