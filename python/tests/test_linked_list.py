@@ -128,3 +128,98 @@ def test_linked_list_append():
     actual = ll.to_string()
     # Assert
     assert actual == expected
+
+
+def test_append_multie_nodes():
+    # Arrange
+    expected = "{ 1 } -> { 5 } -> { 6 } -> NULL"
+    # Act
+    ll = LinkedList()
+    # Assert
+    node1 = ll.insert(1)
+    node2 = ll.append(5)
+    node3 = ll.append(6)
+    actual = ll.to_string()
+    # Assert
+    assert actual == expected
+
+
+def test_insert_before_first_node():
+    # Arrange
+    expected = "{ 3 } -> { 5 } -> { 1 } -> NULL"
+    # Act
+    ll = LinkedList()
+    # Assert
+    node1 = ll.insert(1)
+    node1 = ll.insert(3)
+    node2 = ll.insert_before(5, 1)
+    actual = ll.to_string()
+    # Assert
+    assert actual == expected
+
+
+def test_insert_before_middle_node():
+    # Arrange
+    expected = "{ 5 } -> { 1 } -> { 3 } -> NULL"
+    # Act
+    ll = LinkedList()
+    # Assert
+    node1 = ll.insert(1)
+    node1 = ll.insert(3)
+    node2 = ll.insert_before(5, 3)
+    actual = ll.to_string()
+    # Assert
+    assert actual == expected
+
+
+def test_insert_before_empty_list():
+    # Arrange
+    expected = "Empty linked list"
+    # Act
+    ll = LinkedList()
+    # Assert
+
+    node2 = ll.insert_before(5, 1)
+    actual = ll.to_string()
+    # Assert
+    assert actual == expected
+
+
+def test_insert_after_list_tile():
+    # Arrange
+    expected = "This the linked list tile"
+    # Act
+    ll = LinkedList()
+    # Assert
+    node1 = ll.insert(5)
+    node2 = ll.insert(4)
+    actual = ll.insert_after(5, 4)
+    # Assert
+    assert actual == expected
+
+
+def test_insert_after_middle_node():
+    # Arrange
+    expected = "{ 5 } -> { 3 } -> { 1 } -> NULL"
+    # Act
+    ll = LinkedList()
+    # Assert
+    node1 = ll.insert(1)
+    node1 = ll.insert(3)
+    node2 = ll.insert_after(5, 3)
+    actual = ll.to_string()
+    # Assert
+    assert actual == expected
+
+
+def test_insert_after():
+    # Arrange
+    expected = "{ 5 } -> { 1 } -> { 3 } -> NULL"
+    # Act
+    ll = LinkedList()
+    # Assert
+    node1 = ll.insert(5)
+    node2 = ll.insert(1)
+    actual = ll.insert_after(3, 1)
+    # Assert
+    assert actual == expected
