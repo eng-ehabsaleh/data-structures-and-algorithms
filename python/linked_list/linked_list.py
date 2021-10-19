@@ -92,3 +92,5 @@ class LinkedList:
 # print("for two", ehab.includes(2))
 # print("for6", ehab.includes(6))
 # print("for 3", ehab.includes(3))
+# print("for 3", ehab.includes(3))
+# print("for 3", ehab.includes(3))
