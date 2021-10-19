@@ -83,7 +83,7 @@ class LinkedList:
         string += "NULL"
         return string
 
-
+# mohmmad=linkedlist()
 # ehab = LinkedList()
 # ehab.insert(2)
 # ehab.insert(1)
