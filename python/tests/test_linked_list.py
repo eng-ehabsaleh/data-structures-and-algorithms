@@ -116,3 +116,79 @@ def test_linked_to_string():
     actual = ll.to_string()
     # Assert
     assert actual == expected
+
+
+def test_empty_lists():
+    # Arrange
+    excepted = 'There is no lists to zip'
+    # Act
+    first_ll = LinkedList()
+    second_ll = LinkedList()
+    actual = zip_lists(first_ll, second_ll)
+    # Assert
+    assert excepted == actual
+
+
+def test_first_list_empty():
+    # Arrange
+    excepted = "{ 1 } -> { 2 } -> { 3 } -> NULL"
+    # Act
+    first_ll = LinkedList()
+    second_ll = LinkedList()
+    second_ll.insert(1)
+    second_ll.append(2)
+    second_ll.append(3)
+    actual = zip_lists(first_ll, second_ll)
+    # Assert
+    assert excepted == actual
+
+
+def test_second_list_empty():
+    # Arrange
+    excepted = "{ 1 } -> { 2 } -> { 3 } -> NULL"
+    # Act
+    first_ll = LinkedList()
+    second_ll = LinkedList()
+    first_ll.insert(1)
+    first_ll.append(2)
+    first_ll.append(3)
+    actual = zip_lists(first_ll, second_ll)
+    # Assert
+    assert excepted == actual
+
+
+def test_diff_list_length():
+    # Arrange
+    excepted = "{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> { 6 } -> { 7 } -> NULL"
+    # Act
+    first_ll = LinkedList()
+    first_ll.insert(3)
+    first_ll.append(5)
+    first_ll.append(7)
+    first_ll.insert(1)
+
+    second_ll = LinkedList()
+    second_ll.insert(2)
+    second_ll.append(4)
+    second_ll.append(6)
+    actual = zip_lists(first_ll, second_ll)
+    # Assert
+    assert excepted == actual
+
+
+def test_happy_path():
+    # Arrange
+    excepted = "{ 2 } -> { 5 } -> { 9 } -> { 3 } -> { 4 } -> { 6 } -> NULL"
+    # Act
+    first_ll = LinkedList()
+    first_ll.insert(2)
+    first_ll.append(9)
+    first_ll.append(4)
+    second_ll = LinkedList()
+    second_ll.insert(5)
+    second_ll.append(3)
+    second_ll.append(6)
+    print(str(second_ll))
+    actual = zip_lists(first_ll, second_ll)
+    # Assert
+    assert excepted == actual

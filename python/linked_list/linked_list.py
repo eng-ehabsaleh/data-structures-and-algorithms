@@ -8,8 +8,8 @@ class Node:
 
     Methods
     -------
-    __init__(data, next_):
-        the constructor method for the class, it takes two parameters, the data parameter is the a reference to the data the node will hold, and the next_
+    __init__(data, nxt_):
+        the constructor method for the class, it takes two parameters, the data parameter is the a reference to the data the node will hold, and the nxt_
 
     """
 
@@ -36,7 +36,6 @@ class LinkedList:
         self.head = None
 
     def insert(self, value):
-        # print(self.head)
         """"
         Insert creates a Node with the value that was passed and adds
         it to the head of the linked list shifting all other values down
@@ -46,15 +45,8 @@ class LinkedList:
 
         returns: None
         """
-        # create new node
-        # print("before", self.head)
-        self.head = Node(value, self.head)
-        # self.ll.append(self.head)
 
-        # print(self.head.nxt)
-        # print("after1", self.head)
-        # print("data", self.head.data)
-        # print("next value", self.head.nxt)
+        self.head = Node(value, self.head)
 
     def includes(self, value):
         """insert function will loop through all the inside the dictionary(object)
@@ -83,12 +75,34 @@ class LinkedList:
         string += "NULL"
         return string
 
-# mohmmad=linkedlist()
-# ehab = LinkedList()
-# ehab.insert(2)
-# ehab.insert(1)
-# ehab.insert(6)
-# print(ehab.to_string())
-# print("for two", ehab.includes(2))
-# print("for6", ehab.includes(6))
-# print("for 3", ehab.includes(3))
+    def zip_lists(list1, list2):
+        """function takes two lists as argument and return one list which is result of alternate between the two lists and return a reference to the head of the zipped list."""
+
+        first = list1.head
+        second = list2.head
+
+        if not first and not second:
+
+            return 'There is no lists to zip'
+
+        elif not first:
+
+            return str(list2)
+
+        elif not second:
+            return str(list1)
+
+        fixed_node = ''
+
+        while first and second:
+            if second:
+                fixed_node = first.nxt
+                first.nxt = second
+                first = fixed_node
+
+            if first:
+                fixed_node = second.nxt
+                second.nxt = first
+                second = fixed_node
+
+        return str(list1)
