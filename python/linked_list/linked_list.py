@@ -104,4 +104,104 @@ class LinkedList:
 
                 return current.data
 
+
             current = current.nxt
+
+    def zip_lists(list1, list2):
+        """function takes two lists as argument and return one list which is result of alternate between the two lists and return a reference to the head of the zipped list."""
+
+        first = list1.head
+        second = list2.head
+
+        if not first and not second:
+
+            return 'There is no lists to zip'
+
+        elif not first:
+
+            return str(list2)
+
+        elif not second:
+            return str(list1)
+
+        fixed_node = ''
+
+        while first and second:
+            if second:
+                fixed_node = first.nxt
+                first.nxt = second
+                first = fixed_node
+
+            if first:
+                fixed_node = second.nxt
+                second.nxt = first
+                second = fixed_node
+
+        return str(list1)
+
+    def append(self, new_value):
+        """ function will add the given value as a node to the end of the list
+        argument
+        new _value
+        return none"""
+        new_node = Node(new_value)
+        if self.head is None:
+            self.head = new_node
+            return
+
+        last = self.head
+        while (last.nxt):
+            last = last.nxt
+
+        last.nxt = new_node
+
+    def insert_before(self, new, pre):
+        """
+        function will add a new node before the given value
+        arguments
+        new 
+        pre 
+        returns none
+        """
+
+        current = self.head
+        if not current:
+            return "NULL"
+        while current.nxt:
+            if current.nxt.data == pre:
+                new_node = Node(new)
+                new_node.nxt = current.nxt
+                current.nxt = new_node
+        current = current.nxt
+
+    def insert_after(self, new, after):
+        """
+        function will add a new value as a node after the given value
+        arguments
+        new 
+        after 
+        returns null if the linked list is empty 
+        """
+
+        current = self.head
+        if not current.nxt:
+            return "This the linked list tile"
+        while current.nxt:
+            if current.data == after:
+                new_node = Node(new)
+                new_node.nxt = current.nxt
+                current.nxt = new_node
+        current = current.nxt
+
+
+ehab = LinkedList()
+ehab.insert(2)
+ehab.insert(1)
+ehab.insert(6)
+# ehab.insert_before(2, 6)
+print(ehab.to_string())
+# print("for two", ehab.includes(2))
+# print("for6", ehab.includes(6))
+# print("for 3", ehab.includes(3))
+
+
