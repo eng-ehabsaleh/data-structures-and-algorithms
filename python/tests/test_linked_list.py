@@ -117,6 +117,18 @@ def test_linked_to_string():
 
 
 
+def test_k_index_out_of_range():
+    # Arrange
+    excepted = 'Index out of range'
+    # Act
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    ll.append(4)
+    actual = ll.kth_from_end(5)
+
+
 def test_empty_lists():
     # Arrange
     excepted = 'There is no lists to zip'
@@ -124,9 +136,22 @@ def test_empty_lists():
     first_ll = LinkedList()
     second_ll = LinkedList()
     actual = zip_lists(first_ll, second_ll)
+
     # Assert
     assert excepted == actual
 
+
+
+def test_k_and_length_the_same():
+    # Arrange
+    excepted = 'Index out of range'
+    # Act
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    ll.append(14)
+    actual = ll.kth_from_end(4)
 
 def test_first_list_empty():
     # Arrange
@@ -138,9 +163,22 @@ def test_first_list_empty():
     second_ll.append(2)
     second_ll.append(3)
     actual = zip_lists(first_ll, second_ll)
+
     # Assert
     assert excepted == actual
 
+
+
+def test_k_negative():
+    # Arrange
+    excepted = 'k must be non-negative number'
+    # Act
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    ll.append(14)
+    actual = ll.kth_from_end(-4)
 
 def test_second_list_empty():
     # Arrange
@@ -152,9 +190,19 @@ def test_second_list_empty():
     first_ll.append(2)
     first_ll.append(3)
     actual = zip_lists(first_ll, second_ll)
+
     # Assert
     assert excepted == actual
 
+
+
+def test_ll_size_1():
+    # Arrange
+    excepted = 2
+    # Act
+    ll = LinkedList()
+    ll.insert(2)
+    actual = ll.kth_from_end(0)
 
 def test_diff_list_length():
     # Arrange
@@ -171,12 +219,24 @@ def test_diff_list_length():
     second_ll.append(4)
     second_ll.append(6)
     actual = zip_lists(first_ll, second_ll)
+
     # Assert
     assert excepted == actual
 
 
 def test_happy_path():
     # Arrange
+
+    excepted = 2
+    # Act
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(9)
+    actual = ll.kth_from_end(1)
+    # Assert
+    assert excepted == actual
+
     excepted = "{ 2 } -> { 5 } -> { 9 } -> { 3 } -> { 4 } -> { 6 } -> NULL"
     # Act
     first_ll = LinkedList()
@@ -299,4 +359,5 @@ def test_insert_after():
     actual = ll.insert_after(3, 1)
     # Assert
     assert actual == expected
+
 
