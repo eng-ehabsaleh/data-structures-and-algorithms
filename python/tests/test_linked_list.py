@@ -116,3 +116,69 @@ def test_linked_to_string():
     actual = ll.to_string()
     # Assert
     assert actual == expected
+
+
+def test_k_index_out_of_range():
+    # Arrange
+    excepted = 'Index out of range'
+    # Act
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    ll.append(4)
+    actual = ll.kth_from_end(5)
+    # Assert
+    assert excepted == actual
+
+
+def test_k_and_length_the_same():
+    # Arrange
+    excepted = 'Index out of range'
+    # Act
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    ll.append(14)
+    actual = ll.kth_from_end(4)
+    # Assert
+    assert excepted == actual
+
+
+def test_k_negative():
+    # Arrange
+    excepted = 'k must be non-negative number'
+    # Act
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    ll.append(14)
+    actual = ll.kth_from_end(-4)
+    # Assert
+    assert excepted == actual
+
+
+def test_ll_size_1():
+    # Arrange
+    excepted = 2
+    # Act
+    ll = LinkedList()
+    ll.insert(2)
+    actual = ll.kth_from_end(0)
+    # Assert
+    assert excepted == actual
+
+
+def test_happy_path():
+    # Arrange
+    excepted = 2
+    # Act
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(9)
+    actual = ll.kth_from_end(1)
+    # Assert
+    assert excepted == actual

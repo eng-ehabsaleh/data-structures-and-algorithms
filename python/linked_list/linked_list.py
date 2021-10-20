@@ -8,8 +8,8 @@ class Node:
 
     Methods
     -------
-    __init__(data, next_):
-        the constructor method for the class, it takes two parameters, the data parameter is the a reference to the data the node will hold, and the next_
+    __init__(data, nxt_):
+        the constructor method for the class, it takes two parameters, the data parameter is the a reference to the data the node will hold, and the nxt_
 
     """
 
@@ -36,7 +36,6 @@ class LinkedList:
         self.head = None
 
     def insert(self, value):
-        # print(self.head)
         """"
         Insert creates a Node with the value that was passed and adds
         it to the head of the linked list shifting all other values down
@@ -46,15 +45,8 @@ class LinkedList:
 
         returns: None
         """
-        # create new node
-        # print("before", self.head)
-        self.head = Node(value, self.head)
-        # self.ll.append(self.head)
 
-        # print(self.head.nxt)
-        # print("after1", self.head)
-        # print("data", self.head.data)
-        # print("next value", self.head.nxt)
+        self.head = Node(value, self.head)
 
     def includes(self, value):
         """insert function will loop through all the inside the dictionary(object)
@@ -83,14 +75,33 @@ class LinkedList:
         string += "NULL"
         return string
 
+    def kth_from_end(self, k):
+        """
+        Return the node’s value that is k places from the tail of the linked list.
+        arguments
+        K 
+        returns: the value of the k places
+        """
 
-# ehab = LinkedList()
-# ehab.insert(2)
-# ehab.insert(1)
-# ehab.insert(6)
-# print(ehab.to_string())
-# print("for two", ehab.includes(2))
-# print("for6", ehab.includes(6))
-# print("for 3", ehab.includes(3))
-# print("for 3", ehab.includes(3))
-# print("for 3", ehab.includes(3))
+        current = self.head
+        node_length = 1
+
+        while current.nxt:
+            node_length += 1
+            current = current.nxt
+        current = self.head
+
+        if k < 0:
+            return
+
+        elif k >= node_length:
+            return
+
+        value = node_length-k-1
+        for i in range(node_length):
+
+            if i == value:
+
+                return current.data
+
+            current = current.nxt
