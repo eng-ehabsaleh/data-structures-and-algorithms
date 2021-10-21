@@ -1,5 +1,5 @@
 
-from code_challenges.cc5_6.linked_list import Node,  LinkedList
+from linked_list.linked_list import Node,  LinkedList
 import pytest
 
 
@@ -116,7 +116,6 @@ def test_linked_to_string():
     assert actual == expected
 
 
-
 def test_k_index_out_of_range():
     # Arrange
     excepted = 'Index out of range'
@@ -141,7 +140,6 @@ def test_empty_lists():
     assert excepted == actual
 
 
-
 def test_k_and_length_the_same():
     # Arrange
     excepted = 'Index out of range'
@@ -152,6 +150,7 @@ def test_k_and_length_the_same():
     ll.insert(3)
     ll.append(14)
     actual = ll.kth_from_end(4)
+
 
 def test_first_list_empty():
     # Arrange
@@ -168,7 +167,6 @@ def test_first_list_empty():
     assert excepted == actual
 
 
-
 def test_k_negative():
     # Arrange
     excepted = 'k must be non-negative number'
@@ -179,6 +177,7 @@ def test_k_negative():
     ll.insert(3)
     ll.append(14)
     actual = ll.kth_from_end(-4)
+
 
 def test_second_list_empty():
     # Arrange
@@ -195,7 +194,6 @@ def test_second_list_empty():
     assert excepted == actual
 
 
-
 def test_ll_size_1():
     # Arrange
     excepted = 2
@@ -203,6 +201,7 @@ def test_ll_size_1():
     ll = LinkedList()
     ll.insert(2)
     actual = ll.kth_from_end(0)
+
 
 def test_diff_list_length():
     # Arrange
@@ -251,6 +250,7 @@ def test_happy_path():
     actual = zip_lists(first_ll, second_ll)
     # Assert
     assert excepted == actual
+
 
 def test_linked_list_append():
     # Arrange
@@ -359,5 +359,3 @@ def test_insert_after():
     actual = ll.insert_after(3, 1)
     # Assert
     assert actual == expected
-
-
