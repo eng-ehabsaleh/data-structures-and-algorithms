@@ -17,17 +17,17 @@ class Stack:
     def pop(self):
 
         if self.top == None:
-            raise EmptyStack("This stack is empty")
+            raise Exception("This stack is empty")
 
         temp = self.top
         self.top = self.top.nxt
         temp.nxt = None
 
-        return temp.value
+        return temp.head
 
     def peek(self):
 
-        return self.top.value
+        return self.top.head
 
     def is_empty(self):
 
@@ -46,7 +46,18 @@ class Pseudo_queue:
         self.rear = self.instance1.top.head
 
     def dequeue(self):
-        pass
+        if self.instance1.top:
+            stack1 = self.instance1
+            while not stack1.is_empty():
+                self.instance2.push(stack1.pop())
+
+            poped = self.instance2.pop()
+            self.front = self.instance2.top
+            self.instance1 = Stack()
+            stack2 = self.instance2
+            while not stack2.is_empty():
+                self.instance1.push(stack2.pop())
+            return poped
 
 
 ehab = Pseudo_queue()
@@ -54,4 +65,5 @@ ehab.enqueue(1)
 print(ehab.rear)
 ehab.enqueue(2)
 print(ehab.rear)
+ehab.dequeue()
 print(ehab.rear)

@@ -1,6 +1,6 @@
 from stack_and_queue.node import Node
 from stack_and_queue.stack import Stack
-import pytest
+# import pytest
 
 
 def test_push(stack):
