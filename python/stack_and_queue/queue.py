@@ -31,3 +31,13 @@ class Queue:
 
     def is_empty(self):
         return not self.front
+
+
+ehab = Queue()
+ehab.enqueue(1)
+print(ehab.rear.nxt)
+ehab.enqueue(2)
+print(ehab.rear.nxt)
+ehab.enqueue(3)
+print(ehab.rear.value)
+print(ehab.front.nxt.value)
