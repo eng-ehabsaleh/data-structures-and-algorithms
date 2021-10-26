@@ -39,3 +39,6 @@ To run your tests
 **CC10**
 
 <img src="python/stack_and_queue/stack_and_queue/code challenge 10.png">
+
+**CC12**
+<img src="python/stack_queue_animal_shelter/code challenge12.png">
