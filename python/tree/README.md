@@ -18,3 +18,7 @@ space: O(n)
 ## API
 
 **the description are provided as a docstring in each method**
+
+<img src="tree/cc15 (1).png">
+
+<img src="tree/cc15 (2).png">
