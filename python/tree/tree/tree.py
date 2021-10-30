@@ -10,6 +10,8 @@ class binarytree:
         self.root = None
 
     def inorder(self):
+        """class method return a list of the object content as the following left>>root>>right and 
+        takes no argument"""
         self.values = []
         if not self.root:
             return "empty tree"
@@ -24,11 +26,13 @@ class binarytree:
         return ordering(self.root)
 
     def preorder(self):
+        """class method return a list of the object(tree) contant as the following root>>left>>right and takes no argument"""
         self.values = []
         if self.root == None:
             return "empty tree"
 
         def ordering(node):
+
             self.values += [node.value]
             if node.left:
                 ordering(node.left)
@@ -38,6 +42,7 @@ class binarytree:
         return ordering(self.root)
 
     def postorder(self):
+        """class method return a list of the object(tree) contant as the following left>>right>>root and takes no argument"""
         self.values = []
         if not self.root:
             return "empty tree"
@@ -54,6 +59,7 @@ class binarytree:
 
 class binarysearchtree(binarytree):
     def add(self, value):
+        """a class method that add values to the tree either to the right or to the left based on wish value is greater the right or the left also depends on the root at the first level"""
         if self.root == None:
             self.root = Node(value)
         else:
@@ -71,6 +77,7 @@ class binarysearchtree(binarytree):
                     current = current.right
 
     def Contains(self, value):
+        """class method takes one argument and check if this argument are within the tree content either on right or left and return that the vakue does exist in the tree or not"""
         if self.root == None:
             return 'empty tree'
         else:
