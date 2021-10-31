@@ -1,5 +1,5 @@
 
-from code_challenges.cc5_6.linked_list import Node,  LinkedList
+from linked_list.linked_list import Node,  LinkedList
 import pytest
 
 
@@ -88,7 +88,7 @@ def test_linked_list_insert_twice():
     assert ll.head.nxt.data == 6
 
 
-def test_linked_inclue():
+def test_linked_include():
     # Arrange
     expected = True
     ll = LinkedList()
@@ -144,6 +144,19 @@ def test_append_multie_nodes():
     assert actual == expected
 
 
+def test_insert_after_middle():
+    ll = LinkedList()
+    ll.insert(7)
+    ll.insert(4)
+    ll.insert(1)
+    ll.append(74)
+    ll.append(66)
+    ll.insert_after(7, 5)
+    ll.to_string()
+    assert ll.to_string(
+    ) == "{ 1 } -> { 4 } -> { 5 } -> { 7 } -> { 74 } -> { 66 } -> NULL"
+
+
 def test_insert_before_middle():
     ll = LinkedList()
     ll.insert(7)
@@ -163,8 +176,7 @@ def test_insert_before_empty_list():
     # Act
     ll = LinkedList()
     # Assert
-
-    node2 = ll.insert_before(5, 1)
+    ll.insert_before(5, 1)
     actual = ll.to_string()
     # Assert
     assert actual == expected

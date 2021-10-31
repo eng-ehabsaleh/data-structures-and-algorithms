@@ -139,4 +139,5 @@ ehab.insert(6)
 ehab.append(3)
 
 ehab.insert_before(2, 8)
+ehab.insert_after(2, 7)
 print(ehab.to_string())
