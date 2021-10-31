@@ -116,6 +116,142 @@ def test_linked_to_string():
     assert actual == expected
 
 
+def test_k_index_out_of_range():
+    # Arrange
+    excepted = 'Index out of range'
+    # Act
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    ll.append(4)
+    actual = ll.kth_from_end(5)
+
+
+def test_empty_lists():
+    # Arrange
+    excepted = 'There is no lists to zip'
+    # Act
+    first_ll = LinkedList()
+    second_ll = LinkedList()
+    actual = zip_lists(first_ll, second_ll)
+
+    # Assert
+    assert excepted == actual
+
+
+def test_k_and_length_the_same():
+    # Arrange
+    excepted = 'Index out of range'
+    # Act
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    ll.append(14)
+    actual = ll.kth_from_end(4)
+
+
+def test_first_list_empty():
+    # Arrange
+    excepted = "{ 1 } -> { 2 } -> { 3 } -> NULL"
+    # Act
+    first_ll = LinkedList()
+    second_ll = LinkedList()
+    second_ll.insert(1)
+    second_ll.append(2)
+    second_ll.append(3)
+    actual = zip_lists(first_ll, second_ll)
+
+    # Assert
+    assert excepted == actual
+
+
+def test_k_negative():
+    # Arrange
+    excepted = 'k must be non-negative number'
+    # Act
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    ll.append(14)
+    actual = ll.kth_from_end(-4)
+
+
+def test_second_list_empty():
+    # Arrange
+    excepted = "{ 1 } -> { 2 } -> { 3 } -> NULL"
+    # Act
+    first_ll = LinkedList()
+    second_ll = LinkedList()
+    first_ll.insert(1)
+    first_ll.append(2)
+    first_ll.append(3)
+    actual = zip_lists(first_ll, second_ll)
+
+    # Assert
+    assert excepted == actual
+
+
+def test_ll_size_1():
+    # Arrange
+    excepted = 2
+    # Act
+    ll = LinkedList()
+    ll.insert(2)
+    actual = ll.kth_from_end(0)
+
+
+def test_diff_list_length():
+    # Arrange
+    excepted = "{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> { 6 } -> { 7 } -> NULL"
+    # Act
+    first_ll = LinkedList()
+    first_ll.insert(3)
+    first_ll.append(5)
+    first_ll.append(7)
+    first_ll.insert(1)
+
+    second_ll = LinkedList()
+    second_ll.insert(2)
+    second_ll.append(4)
+    second_ll.append(6)
+    actual = zip_lists(first_ll, second_ll)
+
+    # Assert
+    assert excepted == actual
+
+
+def test_happy_path():
+    # Arrange
+
+    excepted = 2
+    # Act
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(9)
+    actual = ll.kth_from_end(1)
+    # Assert
+    assert excepted == actual
+
+    excepted = "{ 2 } -> { 5 } -> { 9 } -> { 3 } -> { 4 } -> { 6 } -> NULL"
+    # Act
+    first_ll = LinkedList()
+    first_ll.insert(2)
+    first_ll.append(9)
+    first_ll.append(4)
+    second_ll = LinkedList()
+    second_ll.insert(5)
+    second_ll.append(3)
+    second_ll.append(6)
+    print(str(second_ll))
+    actual = zip_lists(first_ll, second_ll)
+    # Assert
+    assert excepted == actual
+
+
 def test_linked_list_append():
     # Arrange
     expected = "{ a } -> { b } -> { c } -> { A } -> NULL"
