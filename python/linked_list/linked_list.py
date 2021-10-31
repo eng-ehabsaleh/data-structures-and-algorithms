@@ -75,6 +75,69 @@ class LinkedList:
         string += "NULL"
         return string
 
+    def kth_from_end(self, k):
+        """
+        Return the node’s value that is k places from the tail of the linked list.
+        arguments
+        K 
+        returns: the value of the k places
+        """
+
+        current = self.head
+        node_length = 1
+
+        while current.nxt:
+            node_length += 1
+            current = current.nxt
+        current = self.head
+
+        if k < 0:
+            return
+
+        elif k >= node_length:
+            return
+
+        value = node_length-k-1
+        for i in range(node_length):
+
+            if i == value:
+
+                return current.data
+
+            current = current.nxt
+
+    def zip_lists(list1, list2):
+        """function takes two lists as argument and return one list which is result of alternate between the two lists and return a reference to the head of the zipped list."""
+
+        first = list1.head
+        second = list2.head
+
+        if not first and not second:
+
+            return 'There is no lists to zip'
+
+        elif not first:
+
+            return str(list2)
+
+        elif not second:
+            return str(list1)
+
+        fixed_node = ''
+
+        while first and second:
+            if second:
+                fixed_node = first.nxt
+                first.nxt = second
+                first = fixed_node
+
+            if first:
+                fixed_node = second.nxt
+                second.nxt = first
+                second = fixed_node
+
+        return str(list1)
+
     def append(self, new_value):
         """ function will add the given value as a node to the end of the list
         argument
@@ -136,8 +199,8 @@ ehab = LinkedList()
 ehab.insert(2)
 ehab.insert(1)
 ehab.insert(6)
-ehab.append(3)
-print(Node)
-# ehab.insert_before(2, 8)
-# ehab.insert_after(2, 7)
-# print(ehab.to_string())
+# ehab.insert_before(2, 6)
+print(ehab.to_string())
+# print("for two", ehab.includes(2))
+# print("for6", ehab.includes(6))
+# print("for 3", ehab.includes(3))
