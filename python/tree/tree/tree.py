@@ -70,6 +70,7 @@ class binarysearchtree(binarytree):
                         current.left = Node(value)
                         break
                     current = current.left
+
                 else:
                     if current.right == None:
                         current.right = Node(value)
