@@ -104,7 +104,6 @@ class LinkedList:
 
                 return current.data
 
-
             current = current.nxt
 
     def zip_lists(list1, list2):
@@ -203,5 +202,3 @@ print(ehab.to_string())
 # print("for two", ehab.includes(2))
 # print("for6", ehab.includes(6))
 # print("for 3", ehab.includes(3))
-
-
