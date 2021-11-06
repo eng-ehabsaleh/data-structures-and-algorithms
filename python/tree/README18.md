@@ -4,7 +4,7 @@
 
 ## Whiteboard Process
 
-<img src="code challenge 18.png">
+<img src="cc18 final.PNG">
 
 ## Approach & Efficiency
 
@@ -18,4 +18,4 @@ space : O(n)
 
 ## Solution
 
-<img src="code 18.png">
+<img src="ccc18.PNG">
