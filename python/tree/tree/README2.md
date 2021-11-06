@@ -4,7 +4,7 @@ loop through the binary tree and found the max value in it
 
 ## Whiteboard Process
 
-<img src="code challenge 16.PNG">
+<img src="cc16.png">
 
 ## Approach & Efficiency
 
@@ -12,6 +12,7 @@ loop through the binary tree and found the max value in it
 
 ## Solution
 
+<img src="c16.png">
 the file path
 
 ```

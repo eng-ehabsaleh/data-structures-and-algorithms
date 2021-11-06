@@ -95,20 +95,6 @@ class binarysearchtree(binarytree):
                         return "dose not exist"
                     current = current.right
 
-    def max_value(self):
-        self.values = []
-        if self.root == None:
-            return "empty tree"
-
-        def ordering(node):
-            self.values += [node.value]
-            if node.left:
-                ordering(node.left)
-            if node.right:
-                ordering(node.right)
-            return max(self.values)
-        return ordering(self.root)
-
 
 if __name__ == '__main__':
     ehab = binarysearchtree()
