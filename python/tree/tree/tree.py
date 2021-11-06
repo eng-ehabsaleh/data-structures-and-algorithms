@@ -94,6 +94,23 @@ class binarysearchtree(binarytree):
                     if current.right == None:
                         return "dose not exist"
                     current = current.right
+############################
+
+    def max(self):
+        if not self.root:
+            return "empty tree"
+        self.max_tree = self.root.value
+
+        def ordering(root):
+            if self.max_tree < root.value:
+                self.max_tree = root.value
+            if root.left:
+                ordering(root.left)
+            if root.right:
+                ordering(root.right)
+        ordering(self.root)
+        return self.max_tree
+#############################
 
 
 if __name__ == '__main__':
@@ -103,8 +120,8 @@ if __name__ == '__main__':
     ehab.add(3)
     ehab.add(4)
     ehab.add(5)
-    print(ehab.inorder())
-    print(ehab.postorder())
-    print(ehab.preorder())
-    print(ehab.Contains(5))
-    print(ehab.max_value())
+    # print(ehab.inorder())
+    # print(ehab.postorder())
+    # print(ehab.preorder())
+    # print(ehab.Contains(5))
+    print(ehab.max())

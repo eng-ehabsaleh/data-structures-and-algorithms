@@ -122,7 +122,7 @@ def test_value_max_1():
     tree.add(7)
     tree.add(11)
     tree.add(3)
-    actual = tree.max_value()
+    actual = tree.max()
     expected = 11
     assert actual == expected
 
@@ -135,7 +135,7 @@ def test_value_max_2():
     tree.add(2)
     tree.add(7)
     tree.add(3)
-    actual = tree.max_value()
+    actual = tree.max()
     expected = 7
     assert actual == expected
 #   to return the max value of binary tree when its empty
@@ -143,6 +143,6 @@ def test_value_max_2():
 
 def test_value_max_3():
     tree = binarysearchtree()
-    actual = tree.max_value()
+    actual = tree.max()
     expected = "empty tree"
     assert actual == expected
