@@ -40,6 +40,6 @@ To run your tests
 
 <img src="python/stack_and_queue/stack_and_queue/code challenge 10.png">
 
-| README   | LINK     | Code Challenge    |
-| -------- | -------- | ----------------- |
-| README28 | [link]() | Code challenge 28 |
+| README   | LINK                                                                                                                     |
+| -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| README28 | [link](https://github.com/eng-ehabsaleh/data-structures-and-algorithms/blob/quick-sort/python/sort/README_QUICK_SORT.md) |
