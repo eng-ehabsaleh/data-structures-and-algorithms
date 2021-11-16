@@ -39,3 +39,7 @@ To run your tests
 **CC10**
 
 <img src="python/stack_and_queue/stack_and_queue/code challenge 10.png">
+
+| README   | LINK     | Code Challenge    |
+| -------- | -------- | ----------------- |
+| README28 | [link]() | Code challenge 28 |
