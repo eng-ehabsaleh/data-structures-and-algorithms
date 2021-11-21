@@ -24,4 +24,4 @@ To run your tests
 
 | Code challenge |  link  |
 | ---------------| -------|
-| Code challenge 26 | [insertion-test]() |
+| Code challenge 26 | [insertion-test](https://github.com/eng-ehabsaleh/data-structures-and-algorithms/pull/44) |
