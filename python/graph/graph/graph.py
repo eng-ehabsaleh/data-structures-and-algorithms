@@ -119,7 +119,7 @@ class Graph:
       current_vertex = queue.dequeue()
       action(current_vertex)
 
-      neighbors = self.get_neigbors(current_vertex)
+      neighbors = self.get_neighbors(current_vertex)
 
       for edge in neighbors:
         neighbor =  edge.vertex
