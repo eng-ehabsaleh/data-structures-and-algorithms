@@ -127,7 +127,7 @@ class Graph:
         if neighbor not in visited:
           visited.add(neighbor)
           queue.append(neighbor)
-    print(result)
+    return result
 graph = Graph()
 
 

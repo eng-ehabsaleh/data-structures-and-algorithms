@@ -97,7 +97,9 @@ def test_get_neighbors():
     assert neighbor_edge.weight == 44
     
     
-def test_breadth_first_search():
+
+    
+def test_breadth_one():
     graph = Graph()
     Pandora = graph.add_node('Pandora')
     Arendelle = graph.add_node('Arendelle')
@@ -112,10 +114,8 @@ def test_breadth_first_search():
     graph.add_edge(Metroville,Narnia)
     graph.add_edge(Metroville,Naboo)
     graph.add_edge(Monstroplolis,Naboo)
- 
-    expected=['Pandora', 'Arendelle', 'Metroville', 'Monstroplolis', 'Narnia', 'Naboo']
-    actual=graph.breadth_first_search(Pandora)
-    assert actual == expected
+    assert graph.breadth_first_search(Pandora) == ['Pandora', 'Arendelle', 'Metroville', 'Monstroplolis', 'Narnia', 'Naboo']    
+    
 
 
 
