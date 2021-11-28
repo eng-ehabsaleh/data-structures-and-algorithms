@@ -109,16 +109,16 @@ class Graph:
     return self.__adjacency_list.get(vertex, [])
   
   def breadth_first_search(self, start_vertex, action=(lambda vertex: None)):
-    queue = Queue()
+    queue = []
     visited = set()
-
-    queue.enqueue(start_vertex)
+    result=[]
+    queue.append(start_vertex)
     visited.add(start_vertex)
 
     while len(queue):
-      current_vertex = queue.dequeue()
+      current_vertex = queue.pop(0)
       action(current_vertex)
-
+      result.append(current_vertex.value)
       neighbors = self.get_neighbors(current_vertex)
 
       for edge in neighbors:
@@ -126,7 +126,31 @@ class Graph:
 
         if neighbor not in visited:
           visited.add(neighbor)
-          queue.enqueue(neighbor)
+          queue.append(neighbor)
+    print(result)
+graph = Graph()
+
+
+Pandora = graph.add_node('Pandora')
+Arendelle = graph.add_node('Arendelle')
+Metroville = graph.add_node('Metroville')
+Monstroplolis = graph.add_node('Monstroplolis')
+Narnia = graph.add_node('Narnia')
+Naboo = graph.add_node('Naboo')
+
+graph.add_edge(Pandora,Arendelle)
+graph.add_edge(Arendelle,Metroville)
+graph.add_edge(Arendelle,Monstroplolis)
+graph.add_edge(Metroville,Monstroplolis)
+graph.add_edge(Metroville,Narnia)
+graph.add_edge(Metroville,Naboo)
+graph.add_edge(Monstroplolis,Naboo)
+
+
+
+
+graph.breadth_first_search(Pandora)
+
 
 
     
