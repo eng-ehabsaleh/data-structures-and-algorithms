@@ -116,7 +116,8 @@ def test_breadth_one():
     graph.add_edge(Monstroplolis,Naboo)
     assert graph.breadth_first_search(Pandora) == ['Pandora', 'Arendelle', 'Metroville', 'Monstroplolis', 'Narnia', 'Naboo']    
     
-
+def business_trip(citys):
+    pass
 
 
 
