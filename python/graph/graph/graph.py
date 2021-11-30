@@ -147,7 +147,8 @@ class Graph:
             return f'{path},${total}'
         return f'{path},${total}'
 
-
+  def graph_depth_first(self,node):
+      pass
 
 
 
