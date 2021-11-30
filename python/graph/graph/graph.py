@@ -128,28 +128,27 @@ class Graph:
           visited.add(neighbor)
           queue.append(neighbor)
     return result
-graph = Graph()
+  def busness_trip(Graph,array):
+        path1 = False
+        path2 = False
+        total = 0
+        for vertex in range(len(array) - 1):
+            adjacency = Graph.__adjacency_list[array[vertex]]
+            path2 = False
+            for edges in adjacency:
+                if array[vertex + 1] == edges.vertex:
+                    total += edges.weight
+                    path1 = True
+                    path2 = True
+        path = path1 and path2
+        if not path:
+            total = 0
+            path = False
+            return f'{path},${total}'
+        return f'{path},${total}'
 
 
-Pandora = graph.add_node('Pandora')
-Arendelle = graph.add_node('Arendelle')
-Metroville = graph.add_node('Metroville')
-Monstroplolis = graph.add_node('Monstroplolis')
-Narnia = graph.add_node('Narnia')
-Naboo = graph.add_node('Naboo')
 
-graph.add_edge(Pandora,Arendelle)
-graph.add_edge(Arendelle,Metroville)
-graph.add_edge(Arendelle,Monstroplolis)
-graph.add_edge(Metroville,Monstroplolis)
-graph.add_edge(Metroville,Narnia)
-graph.add_edge(Metroville,Naboo)
-graph.add_edge(Monstroplolis,Naboo)
-
-
-
-
-graph.breadth_first_search(Pandora)
 
 
 
