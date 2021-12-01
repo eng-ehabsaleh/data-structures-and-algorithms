@@ -148,12 +148,26 @@ class Graph:
         return f'{path},${total}'
 
   def graph_depth_first(self,node):
-      pass
+        finalresult = []
+        finalresult.append(node.value)
+        if node not in self.__adjacency_list:
+            return 'vertex not found in graph '
+        elif self.__adjacency_list[node] == []:
+            return 'verteix has no adjecent'
+        def oredering(node):
+            neighbors = self.__adjacency_list[node]
+            for edge in neighbors:
+                vertces = edge.vertex.value
+
+                if vertces not in finalresult:
+                    finalresult.append(vertces)
+                    oredering(edge.vertex)
+        oredering(node)
+        return finalresult
 
 
 
 
-    
 
 
 
