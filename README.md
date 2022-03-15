@@ -39,3 +39,7 @@ To run your tests
 **CC10**
 
 <img src="python/stack_and_queue/stack_and_queue/code challenge 10.png">
+
+| README   | LINK                                                                                                                     |
+| -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| README28 | [link](https://github.com/eng-ehabsaleh/data-structures-and-algorithms/blob/quick-sort/python/sort/README_QUICK_SORT.md) |
